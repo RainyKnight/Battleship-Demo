@@ -26,7 +26,10 @@ function runGame() {
         else {
             numGuesses++;
             if (guess == location1 || guess == location2 || guess == location3) {
+                alert("Hit!");
                 hits++;
+            } else {
+                alert("Miss :(");
             }
 
             if (hits == 3) {
@@ -37,5 +40,6 @@ function runGame() {
     }
 
 // stats
-alert("It took you " + numGuesses + " guesses to sink the ship!")
+alert("It took you " + numGuesses + " guesses to sink the ship with an accuracy of " + 
+     (parseFloat(100*(3/numGuesses)).toFixed(2)+"%"));
 }
