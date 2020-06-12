@@ -15,6 +15,7 @@ function runGame() {
 
     var isAfloat = true;
 
+    // test
     // isAfloat is a boolean variable with a value of 'true' so it can be it's own conditional
     while (isAfloat) {
 
