@@ -13,9 +13,10 @@ function runGame() {
     var hits = 0;
     var numGuesses = 0;
 
-    var isSunk = false;
+    var isAfloat = true;
 
-    while (isSunk == false) {
+    // isAfloat is a boolean variable with a value of 'true' so it can be it's own conditional
+    while (isAfloat) {
 
         // prompt sends an alert with a text input box. If nothing is entered, the value is "null"
         guess = prompt("Ready, aim, fire! (enter a number from 0-6)")
@@ -33,7 +34,7 @@ function runGame() {
             }
 
             if (hits == 3) {
-                isSunk = true;
+                isAfloat = false;
                 alert("You sank my battleship!");
             }
         }
