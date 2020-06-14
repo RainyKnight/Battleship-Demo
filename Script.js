@@ -4,14 +4,22 @@ function runCode() {
 
 function runGame() {
 
-    // TODO create a random location for the ship
-    var location1 = 3;
-    var location2 = 4;
-    var location3 = 5;
+    // multiplied by 9 because we want it to generate between 0-9.999 
+    var randomLoc = Math.floor(Math.random() * 9);
+
+    //console.log('Ship is at: ' + location1 + ',' + location2 + ',' + location3);
+
+    
+    var location1 = randomLoc;
+    var location2 = location1 + 1;
+    var location3 = location2 + 1;
 
     var guess;
     var hits = 0;
     var numGuesses = 0;
+
+    // specifiy how many slots are on the X-axis
+    var lengthX = 10
 
     var isAfloat = true;
 
@@ -22,7 +30,7 @@ function runGame() {
         // prompt sends an alert with a text input box. If nothing is entered, the value is "null"
         guess = prompt("Ready, aim, fire! (enter a number from 0-6)")
 
-        if (guess < 0 || guess > 6) {
+        if (guess < 0 || guess > lengthX) {
             alert("Invalid input. \nPlease enter a number from 0-6.")
         }
         else {
