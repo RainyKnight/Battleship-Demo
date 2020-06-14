@@ -2,37 +2,45 @@ function runCode() {
     runGame();
 }
 
+// For testing purposes that don't get muddled down by alerts
+function playground() {
+
+}
+
 function runGame() {
+    
+    // specifiy how many slots are on the X-axis
+    var lengthX = 20;
 
-    // multiplied by 9 because we want it to generate between 0-9.999 
-    var randomLoc = Math.floor(Math.random() * 9);
-
-    //console.log('Ship is at: ' + location1 + ',' + location2 + ',' + location3);
-
+    // multiplied by lengthX-1 because we want it to generate between 0-lengthX 
+    var randomLoc = Math.floor(Math.random() * (lengthX-1));
     
     var location1 = randomLoc;
     var location2 = location1 + 1;
     var location3 = location2 + 1;
 
+    console.log("Length: " + lengthX + "\nLocation: " + location1 + "," + location2 + "," + location3);
+
+
     var guess;
     var hits = 0;
     var numGuesses = 0;
 
-    // specifiy how many slots are on the X-axis
-    var lengthX = 10
-
     var isAfloat = true;
 
-    // test 3
     // isAfloat is a boolean variable with a value of 'true' so it can be it's own conditional
     while (isAfloat) {
 
         // prompt sends an alert with a text input box. If nothing is entered, the value is "null"
-        guess = prompt("Ready, aim, fire! (enter a number from 0-6)")
+        guess = prompt("Ready, aim, fire! (enter a number from 0-" + lengthX + ")");
 
         if (guess < 0 || guess > lengthX) {
-            alert("Invalid input. \nPlease enter a number from 0-6.")
+            alert("Invalid input. \nPlease enter a number from 0-" + lengthX + ".")
         }
+        // // TODO error handling if they hit the same spot again
+        // else if (guess == location1 && location1.status() == destroyed) {
+        //     alert("You already hit that spot. You can't hit it again!");
+        // }
         else {
             numGuesses++;
             if (guess == location1 || guess == location2 || guess == location3) {
