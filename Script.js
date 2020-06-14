@@ -8,7 +8,7 @@ function playground() {
 }
 
 function runGame() {
-    
+
     // specifiy how many slots are on the X-axis
     var lengthX = 20;
 
@@ -36,6 +36,11 @@ function runGame() {
 
         if (guess < 0 || guess > lengthX) {
             alert("Invalid input. \nPlease enter a number from 0-" + lengthX + ".")
+        }
+        // error handling for when text is entered
+        // isNaN checks if guess is Not a Number
+        else if (isNaN(guess)) {
+            alert("Invalid input. \nPlease enter a NUMBER from 0-" + lengthX + ".")
         }
         // // TODO error handling if they hit the same spot again
         // else if (guess == location1 && location1.status() == destroyed) {
