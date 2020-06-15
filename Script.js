@@ -66,3 +66,30 @@ function runGame() {
 alert("It took you " + numGuesses + " guesses to sink the ship with an accuracy of " + 
      (parseFloat(100*(3/numGuesses)).toFixed(2)+"%"));
 }
+
+// Future implementation roadmap pseudocode
+
+// // Error handle for hitting the same spot repeatedly
+//     if (guess == ship && isHit == true) {
+//         alert("You already hit that spot!");
+//     }
+
+// // Ship class
+//     class Ship {
+
+//         // Each segment of the ship
+//         var x1;
+//         var y1;
+//         var isHit1 = false;
+
+//         var x2
+//         var y2;
+//         var isHit1 = false;
+
+//         var x3;
+//         var y3;
+//         var isHit1 = false;
+
+//         var sunk = false;
+
+//     }
