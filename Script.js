@@ -13,8 +13,8 @@ function runGame() {
     var lengthX = 20;
 
     // multiplied by lengthX-1 because we want it to generate between 0-lengthX 
-    var randomLoc = Math.floor(Math.random() * (lengthX-1));
-    
+    var randomLoc = Math.floor(Math.random() * (lengthX - 1));
+
     var location1 = randomLoc;
     var location2 = location1 + 1;
     var location3 = location2 + 1;
@@ -25,6 +25,7 @@ function runGame() {
     var guess;
     var hits = 0;
     var numGuesses = 0;
+    var guesses = [];
 
     var isAfloat = true;
 
@@ -42,15 +43,16 @@ function runGame() {
         else if (isNaN(guess)) {
             alert("Invalid input. \nPlease enter a NUMBER from 0-" + lengthX + ".")
         }
-        // // TODO error handling if they hit the same spot again
-        // else if (guess == location1 && location1.status() == destroyed) {
-        //     alert("You already hit that spot. You can't hit it again!");
-        // }
         else {
             numGuesses++;
-            if (guess == location1 || guess == location2 || guess == location3) {
+            console.log(guess);
+            if (find(guess, guesses)) {
+                alert("You already hit that spot. You can't hit it again!");
+            }
+            else if (guess == location1 || guess == location2 || guess == location3) {
                 alert("Hit!");
                 hits++;
+                guesses.push(guess);
             } else {
                 alert("Miss :(");
             }
@@ -62,9 +64,20 @@ function runGame() {
         }
     }
 
-// stats
-alert("It took you " + numGuesses + " guesses to sink the ship with an accuracy of " + 
-     (parseFloat(100*(3/numGuesses)).toFixed(2)+"%"));
+    // stats
+    alert("It took you " + numGuesses + " guesses to sink the ship with an accuracy of " +
+        (parseFloat(100 * (3 / numGuesses)).toFixed(2) + "%"));
+}
+
+// searches through the array to check for the same guess
+function find(currentGuess, guesses) {
+
+    for (i = 0; i < guesses; i++) {
+        if (guesses[i] == currentGuess) {
+            return true;
+        }
+    }
+
 }
 
 // Future implementation roadmap pseudocode
