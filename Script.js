@@ -5,6 +5,8 @@ function runCode() {
 // For testing purposes that don't get muddled down by alerts
 function playground() {
 
+    
+
 }
 
 function runGame() {
@@ -72,7 +74,7 @@ function runGame() {
 // searches through the array to check for the same guess
 function find(currentGuess, guesses) {
 
-    for (i = 0; i < guesses; i++) {
+    for (var i = 0; i < guesses; i++) {
         if (guesses[i] == currentGuess) {
             return true;
         }
@@ -82,27 +84,36 @@ function find(currentGuess, guesses) {
 
 // Future implementation roadmap pseudocode
 
-// // Error handle for hitting the same spot repeatedly
-//     if (guess == ship && isHit == true) {
-//         alert("You already hit that spot!");
-//     }
 
-// // Ship class
-//     class Ship {
+// // Ship class (one long)
+    // class ship {
 
-//         // Each segment of the ship
-//         var x1;
-//         var y1;
-//         var isHit1 = false;
+    //     // Each segment of the ship
+    //     var x1;
+    //     var y1;
+    //     var isHit1 = false;
 
-//         var x2
-//         var y2;
-//         var isHit1 = false;
+    //     var sunk = false;
 
-//         var x3;
-//         var y3;
-//         var isHit1 = false;
+    // }
 
-//         var sunk = false;
+    // // inherit everything from the ship class (two long)
+    // class mediumShip {
 
-//     }
+    //     var x2 = x1 + 1;
+    //     var y2 = y1 + 1;
+    //     var isHit1 = false;
+    // }
+
+    // // inherit everything from the ship class (three long)
+    // class largeShip {
+
+    //     var x2 = x1 + 1;
+    //     var y2 = y1 + 1;
+    //     var isHit1 = false;
+
+    //     var x3 = x2 + 1;
+    //     var y3 = y2 + 1;
+    //     var isHit1 = false;
+
+    // }
