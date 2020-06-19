@@ -86,16 +86,23 @@ function find(currentGuess, guesses) {
 
 
 // // Ship class (one long)
-    // class ship {
+    class ship {
 
-    //     // Each segment of the ship
-    //     var x1;
-    //     var y1;
-    //     var isHit1 = false;
+        // Each segment of the ship
+        // will need to be randomized eventually
+        var x1;
+        var y1;
+        var isHit1 = false;
 
-    //     var sunk = false;
+        var sunk = false;
 
-    // }
+        // debug command to show where the ship is
+        function location() {
+            console.log(x1 + "," + y1);
+        }
+
+        // TODO create a constructor
+    }
 
     // // inherit everything from the ship class (two long)
     // class mediumShip {
